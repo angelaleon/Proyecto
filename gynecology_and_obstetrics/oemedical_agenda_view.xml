@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_oemedical_agenda_form" model="ir.ui.view">
+            <field name="name">view.oemedical.agenda.form</field>
+            <field name="model">oemedical.agenda</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="date"/>
+                    <newline/>
+                    <field name="paciente_id"/>
+                    <field name="tipo_cita"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_oemedical_agenda_tree" model="ir.ui.view">
+            <field name="name">view.oemedical.agenda.tree</field>
+            <field name="model">oemedical.agenda</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="date"/>
+                    <field name="paciente_id"/>
+                    <field name="tipo_cita"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_oemedical_agenda_search" model="ir.ui.view">
+            <field name="name">view_oemedical_agenda_search</field>
+            <field name="model">oemedical.agenda</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="tipo_cita"/>
+                    <field name="date"/>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="action_oemedical_agenda_view" model="ir.actions.act_window">
+            <field name="name">Agenda de citaciones</field>
+            <field name="res_model">oemedical.agenda</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</openerp>

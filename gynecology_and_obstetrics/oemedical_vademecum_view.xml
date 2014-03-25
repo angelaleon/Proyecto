@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_oemedical_vademecum_tree" model="ir.ui.view">
+            <field name="name">view.oemedical.vademecum.tree</field>
+            <field name="model">oemedical.vademecum</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="mechanism_action_id"/>
+                    <field name="pactive"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_oemedical_vademecum_form" model="ir.ui.view">
+            <field name="name">view.oemedical.vademecum.form</field>
+            <field name="model">oemedical.vademecum</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="mechanism_action_id"/>
+                    <field name="name"/>
+                    <field name="laboratoy_id"/>
+                    <field name="pactive"/>
+                    <field name="indicative"/>
+                    <field name="characteristics"/>
+                    <field name="posopologia"/>
+                    <field name="packaging"/>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_oemedical_vademecum_search" model="ir.ui.view">
+            <field name="name">view_oemedical_vademecum_search</field>
+            <field name="model">oemedical.vademecum</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="mechanism_action_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_oemedical_vademecum_view" model="ir.actions.act_window">
+            <field name="name">Listado de fármacos</field>
+            <field name="res_model">oemedical.vademecum</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+
+        <record id="view_oemedical_prenatal_tree" model="ir.ui.view">
+            <field name="name">view.oemedical.prenatal.tree</field>
+            <field name="model">oemedical.patient.prenatal.evaluation</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="evaluation_date"/>
+                    <field name="gestational_weeks"/>
+                    <field name="diabetes"/>
+                    <field name="placenta_previa"/>
+                    <field name="observaciones"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_oemedical_prenatal_form" model="ir.ui.view">
+            <field name="name">view.oemedical.prenatal.form</field>
+            <field name="model">oemedical.patient.prenatal.evaluation</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <notebook colspan="4">
+                        <page string="Consulta de obstetricia">
+                            <field name="evaluation_date" colspan="1"/>
+                            <newline/>
+                            <field name="gestational_weeks" colspan="1"/>
+                            <field name="gestational_days" colspan="1"/>
+                            <newline/>
+                            <field name="hypertension" colspan="1"/>
+                            <field name="sobrepeso" colspan="1"/>
+                            <field name="diabetes" colspan="1"/>
+                            <field name="placenta_previa" colspan="1"/>
+                            <newline/>
+                            <field name="fetal_bpd" colspan="1"/>
+                            <field name="fetal_ac" colspan="1"/>
+                            <field name="fetal_hc" colspan="1"/>
+                            <field name="fetal_fl" colspan="1"/>
+                            <newline/>
+                            <field name="observaciones" colspan="2"/>
+                            <field name="tratamiento" colspan="2"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_oemedical_puerperio_tree" model="ir.ui.view">
+            <field name="name">view.oemedical.puerperio.tree</field>
+            <field name="model">oemedical.puerperium.monitor</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="date"/>
+                    <field name="temperature"/>
+                    <field name="lochia_amount"/>
+                    <field name="lochia_odor"/>
+                    <field name="observaciones"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="vview_oemedical_puerperio_form" model="ir.ui.view">
+            <field name="name">view.oemedical.puerperio.form</field>
+            <field name="model">oemedical.puerperium.monitor</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="date"/>
+                    <newline/>
+                    <field name="systolic"/>
+                    <field name="diastolic"/>
+                    <field name="frequency"/>
+                    <field name="temperature"/>
+                    <field name="lochia_amount"/>
+                    <field name="lochia_odor"/>
+                    <field name="observaciones"/>
+                    <field name="tratamiento"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_oemedical_ginecologia_tree" model="ir.ui.view">
+            <field name="name">view.oemedical.ginecologia.tree</field>
+            <field name="model">oemedical.ginecologia</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="date"/>
+                    <field name="observaciones"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_oemedical_ginecologia_form" model="ir.ui.view">
+            <field name="name">view.oemedical.ginecologia.form</field>
+            <field name="model">oemedical.ginecologia</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="date" colspan="1"/>
+                    <newline/>
+                    <field name="talla" colspan="1"/>
+                    <field name="peso" colspan="1"/>
+                    <newline/>
+                    <field name="ecografia" colspan="4"/>
+                    <newline/>
+                    <field name="observaciones"/>
+                    <field name="tratamiento"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_oemedical_paciente_tree" model="ir.ui.view">
+            <field name="name">view.oemedical.paciente.tree</field>
+            <field name="model">oemedical.paciente</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="firstname"/>
+                    <field name="name"/>
+                    <field name="tlf1"/>
+                    <field name="tlf2"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_oemedical_paciente_form" model="ir.ui.view">
+            <field name="name">view.oemedical.paciente.form</field>
+            <field name="model">oemedical.paciente</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="name"/>
+                    <field name="firstname"/>
+                    <field name="fech_nac"/>
+                    <field name="edad"/>
+                    <field name="dni"/>
+                    <field name="tlf1"/>
+                    <field name="tlf2"/>
+                    <field name="cp"/>
+                    <field name="country"/>
+                    <field name="city"/>
+                    <field name="fur"/>
+                    <notebook colspan="4">
+                        <page string="Anamnesis">
+                            <field name="antecedentes_per"/>
+                            <field name="antecedentes_fam"/>
+                            <field name="medicacion_actual"/>
+                            <field name="cirugias_previas"/>
+                        </page>
+                    </notebook>
+                    <notebook colspan="4">
+                        <page string="Revisiones obstetrica">
+                            <field name="prenatal_ids" colspan="4" nolabel="1"
+                                   context="{'default_paciente_id': active_id}"/>
+                        </page>
+                        <page string="Revisiones de puerperio">
+                            <field name="puerperio_ids" colspan="4" nolabel="1"
+                                   context="{'default_paciente_id': active_id}"/>
+                        </page>
+                        <page string="Revisiones ginecologica">
+                            <field name="ginecologia_ids" colspan="4" nolabel="1"
+                                   context="{'default_paciente_id': active_id}"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_oemedical_paciente_search" model="ir.ui.view">
+            <field name="name">view_oemedical_paciente_search</field>
+            <field name="model">oemedical.paciente</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="firstname"/>
+                    <field name="tlf1"/>
+                    <field name="dni"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_oemedical_view" model="ir.actions.act_window">
+            <field name="name">Pacientes de la clinica</field>
+            <field name="res_model">oemedical.paciente</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--<menuitem name="HIS (Sistema de informacion hospitalaria)" id="menu_base_oemedical"/>-->
+
+        <!--<menuitem name="Listado de pacientes" id="menu_action_pacientes" parent="menu_base_oemedical" sequence="1"/>-->
+        <!--<menuitem name="Ginecologia y obstetricia" id="submenu_action_gine" action="action_oemedical_view"-->
+                  <!--parent="menu_action_pacientes"/>-->
+
+        <!--<menuitem name="Vademecum" id="menu_vademecum" parent="menu_base_oemedical" sequence="4"/>-->
+        <!--<menuitem name="Listado de Vademecum" id="submenu1_action_pruebas" action="action_oemedical_vademecum_view"-->
+                  <!--parent="menu_vademecum"/>-->
+
+        <!--<menuitem name="Consentimientos" id="menu_consentimiento" parent="menu_base_oemedical" sequence="5"/>-->
+        <!--<menuitem name="Listado de consentimientos" id="submenu3_action_pruebas"-->
+                  <!--action="action_oemedical_consentimientos_view"-->
+                  <!--parent="menu_consentimiento"/>-->
+
+        <menuitem name="HIS (Sistema de informacion hospitalaria)" id="menu_base_oemedical"/>
+
+        <menuitem name="Agenda de citaciones" id="menu_action_agenda" parent="menu_base_oemedical" sequence="0"/>
+        <menuitem name="listado de citas" id="submenu_action_citas" action="action_oemedical_agenda_view"
+                  parent="menu_action_agenda"/>
+        <menuitem name="Ver agenda completa" id="submenu_action_citas2" action="action_oemedical_agenda2_view"
+                  parent="menu_action_agenda"/>
+
+        <menuitem name="Listado de pacientes" id="menu_action_pacientes" parent="menu_base_oemedical" sequence="1"/>
+        <menuitem name="Ginecologia y obstetricia" id="submenu_action_gine" action="action_oemedical_view"
+                  parent="menu_action_pacientes"/>
+
+        <menuitem name="Vademecum" id="menu_vademecum" parent="menu_base_oemedical" sequence="4"/>
+        <menuitem name="Listado de Vademecum" id="submenu1_action_pruebas" action="action_oemedical_vademecum_view"
+                  parent="menu_vademecum"/>
+
+        <!--<menuitem name="Consentimientos" id="menu_consentimiento" parent="menu_base_oemedical" sequence="5"/>-->
+        <!--<menuitem name="Listado de consentimientos" id="submenu3_action_pruebas"-->
+                  <!--action="action_oemedical_consentimientos_view"-->
+                  <!--parent="menu_consentimiento"/>-->
+    </data>
+</openerp>

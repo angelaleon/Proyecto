@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_oemedical_agenda2_calendar" model="ir.ui.view">
+            <field name="name">view.oemedical.agenda.calendar</field>
+            <field name="model">oemedical.agenda</field>
+            <field name="type">calendar</field>
+            <field name="arch" type="xml">
+                <calendar date_start="date" color="tipo_cita" date_delay="duracion">
+                    <field name="paciente_id"/>
+                </calendar>
+            </field>
+        </record>
+
+
+        <record id="view_oemedical_agenda2_search" model="ir.ui.view">
+            <field name="name">view_oemedical_agenda_search</field>
+            <field name="model">oemedical.agenda</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="date"/>
+                </search>
+            </field>
+        </record>
+
+
+        <record id="action_oemedical_agenda2_view" model="ir.actions.act_window">
+            <field name="name">Agenda de citaciones</field>
+            <field name="res_model">oemedical.agenda</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">calendar</field>
+        </record>
+
+    </data>
+</openerp>
